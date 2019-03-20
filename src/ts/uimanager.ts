@@ -52,6 +52,7 @@ import {ArrayUtils} from './arrayutils';
 import {BrowserUtils} from './browserutils';
 import { PlayerUtils } from './playerutils';
 import { VolumeController } from './volumecontroller';
+import { SeekForwardButton, SeekButtonDirection } from './components/seekforwardbutton';
 
 export interface UIRecommendationConfig {
   title: string;
@@ -738,9 +739,13 @@ export namespace UIManager.Factory {
       components: [
         new Container({
           components: [
+            new PlaybackToggleButton(),
+            new SeekForwardButton({ direction: SeekButtonDirection.Backward }),
+            new SeekForwardButton({ direction: SeekButtonDirection.Forward }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.CurrentTime, hideInLivePlayback: true }),
             new SeekBar({ label: new SeekBarLabel() }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.TotalTime, cssClasses: ['text-right'] }),
+            new PlaybackSpeedSelectBox(),
           ],
           cssClasses: ['controlbar-top'],
         }),
@@ -769,7 +774,7 @@ export namespace UIManager.Factory {
         }),
         settingsPanel,
         subtitleSettingsPanel,
-        new Watermark(),
+
         new ErrorMessageOverlay(),
       ],
       cssClasses: ['ui-skin-modern', 'ui-skin-smallscreen'],
@@ -821,7 +826,6 @@ export namespace UIManager.Factory {
         new SubtitleOverlay(),
         new BufferingOverlay(),
         new PlaybackToggleOverlay(),
-        new Watermark(),
         controlBar,
         new TitleBar({ keepHiddenWithoutMetadata: true }),
         new ErrorMessageOverlay(),
@@ -1383,4 +1387,3 @@ class PlayerWrapper {
     }
   }
 }
-

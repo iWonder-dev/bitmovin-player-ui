@@ -1,0 +1,20 @@
+@import '../variables';
+
+.#{$prefix}-ui-playback-speed-select {
+  @extend %ui-component;
+
+  background-color: transparent;
+  border: 0;
+  color: $color-primary;
+  cursor: pointer;
+  font-size: .8em;
+  padding: .3em;
+  
+  option {
+    color: $color-secondary;
+
+    &:checked {
+      color: $color-highlight;
+    }
+  }
+}
