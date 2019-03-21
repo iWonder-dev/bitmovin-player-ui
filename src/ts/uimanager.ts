@@ -739,7 +739,6 @@ export namespace UIManager.Factory {
       components: [
         new Container({
           components: [
-            new PlaybackToggleButton(),
             new SeekForwardButton({ direction: SeekButtonDirection.Backward }),
             new SeekForwardButton({ direction: SeekButtonDirection.Forward }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.CurrentTime, hideInLivePlayback: true }),
@@ -768,7 +767,6 @@ export namespace UIManager.Factory {
             new PictureInPictureToggleButton(),
             new AirPlayToggleButton(),
             new VolumeToggleButton(),
-            new SettingsToggleButton({ settingsPanel: settingsPanel }),
             new FullscreenToggleButton(),
           ],
         }),
