@@ -16,7 +16,6 @@ import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesetti
 import {SubtitleSettingsLabel} from './components/subtitlesettings/subtitlesettingslabel';
 import {SubtitleSettingsOpenButton} from './components/subtitlesettings/subtitlesettingsopenbutton';
 import {VideoQualitySelectBox} from './components/videoqualityselectbox';
-import {Watermark} from './components/watermark';
 import {AudioQualitySelectBox} from './components/audioqualityselectbox';
 import {AudioTrackSelectBox} from './components/audiotrackselectbox';
 import {SeekBarLabel} from './components/seekbarlabel';
@@ -661,7 +660,6 @@ export namespace UIManager.Factory {
         controlBar,
         new TitleBar(),
         new RecommendationOverlay(),
-        new Watermark(),
         new ErrorMessageOverlay(),
       ],
       cssClasses: ['ui-skin-modern'],
@@ -901,7 +899,6 @@ export namespace UIManager.Factory {
         new SubtitleOverlay(),
         new CastStatusOverlay(),
         new PlaybackToggleOverlay(),
-        new Watermark(),
         new RecommendationOverlay(),
         controlBar,
         new TitleBar(),
@@ -941,7 +938,6 @@ export namespace UIManager.Factory {
       components: [
         new SubtitleOverlay(),
         new PlaybackToggleOverlay(),
-        new Watermark(),
         controlBar,
         new TitleBar(),
         new ErrorMessageOverlay(),
@@ -982,7 +978,6 @@ export namespace UIManager.Factory {
         new SubtitleOverlay(),
         new CastStatusOverlay(),
         new PlaybackToggleOverlay(),
-        new Watermark(),
         new RecommendationOverlay(),
         controlBar,
         new TitleBar(),
