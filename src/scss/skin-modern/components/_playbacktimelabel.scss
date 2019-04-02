@@ -4,6 +4,7 @@
   @extend %ui-label;
 
   text-transform: uppercase;
+  transform: translateY(20%);
 
   &.#{$prefix}-ui-playbacktimelabel-live {
     cursor: pointer;

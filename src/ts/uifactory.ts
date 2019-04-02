@@ -44,6 +44,7 @@ import { CastUIContainer } from './components/castuicontainer';
 import { UIConditionContext, UIManager } from './uimanager';
 import { UIConfig } from './uiconfig';
 import { PlayerAPI } from 'bitmovin-player';
+import { SeekForwardButton, SeekButtonDirection } from './components/seekforwardbutton';
 
 export namespace UIFactory {
 
@@ -102,6 +103,8 @@ export namespace UIFactory {
         settingsPanel,
         new Container({
           components: [
+            new SeekForwardButton({ direction: SeekButtonDirection.Backward }),
+            new SeekForwardButton({ direction: SeekButtonDirection.Forward }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.CurrentTime, hideInLivePlayback: true }),
             new SeekBar({ label: new SeekBarLabel() }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.TotalTime, cssClasses: ['text-right'] }),
@@ -219,6 +222,8 @@ export namespace UIFactory {
       components: [
         new Container({
           components: [
+            new SeekForwardButton({ direction: SeekButtonDirection.Backward }),
+            new SeekForwardButton({ direction: SeekButtonDirection.Forward }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.CurrentTime, hideInLivePlayback: true }),
             new SeekBar({ label: new SeekBarLabel() }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.TotalTime, cssClasses: ['text-right'] }),

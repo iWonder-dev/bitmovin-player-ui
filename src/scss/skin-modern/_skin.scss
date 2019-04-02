@@ -45,6 +45,8 @@
 @import 'skin-ads';
 @import 'skin-cast-receiver';
 @import 'skin-smallscreen';
+@import 'components/seekforwardbutton';
+@import 'components/playbackspeedselectbox';
 
 .#{$prefix}-ui-uicontainer {
   color: $color-primary;

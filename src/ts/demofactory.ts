@@ -12,7 +12,6 @@ import {PlaybackSpeedSelectBox} from './components/playbackspeedselectbox';
 import {AudioQualitySelectBox} from './components/audioqualityselectbox';
 import {CastStatusOverlay} from './components/caststatusoverlay';
 import {UIContainer} from './components/uicontainer';
-import {Watermark} from './components/watermark';
 import {SubtitleOverlay} from './components/subtitleoverlay';
 import {SettingsPanel} from './components/settingspanel';
 import {SeekBarLabel} from './components/seekbarlabel';
@@ -150,7 +149,6 @@ export namespace DemoFactory {
         controlBar,
         new TitleBar(),
         new RecommendationOverlay(),
-        new Watermark(),
         new ErrorMessageOverlay(),
       ],
     });

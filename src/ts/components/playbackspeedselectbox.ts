@@ -11,6 +11,11 @@ export class PlaybackSpeedSelectBox extends SelectBox {
 
   constructor(config: ListSelectorConfig = {}) {
     super(config);
+
+    this.config = this.mergeConfig(config, {
+      cssClass: 'ui-playback-speed-select',
+    }, this.config);
+
     this.defaultPlaybackSpeeds = [0.25, 0.5, 1, 1.5, 2];
 
     this.config = this.mergeConfig(config, {
@@ -53,7 +58,7 @@ export class PlaybackSpeedSelectBox extends SelectBox {
       if (element !== 1) {
         this.addItem(String(element), `${element}x`);
       } else {
-        this.addItem(String(element), 'Normal');
+        this.addItem(String(element), '1.0x');
       }
     });
   }
