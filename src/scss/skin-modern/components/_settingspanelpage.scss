@@ -25,6 +25,7 @@
   .#{$prefix}-ui-settings-panel-item {
     border-bottom: 1px solid transparentize($color-secondary, .7);
     padding: .5em 0;
+    align-self: center;
 
     &.#{$prefix}-last {
       border-bottom: 0;

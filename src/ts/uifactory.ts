@@ -121,6 +121,7 @@ export namespace UIFactory {
             new AirPlayToggleButton(),
             new CastToggleButton(),
             new VRToggleButton(),
+            new SettingsPanelItem('', new PlaybackSpeedSelectBox()),
             new SettingsToggleButton({ settingsPanel: settingsPanel }),
             new FullscreenToggleButton(),
           ],
