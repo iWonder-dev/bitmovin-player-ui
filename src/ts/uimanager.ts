@@ -16,7 +16,6 @@ import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesetti
 import {SubtitleSettingsLabel} from './components/subtitlesettings/subtitlesettingslabel';
 import {SubtitleSettingsOpenButton} from './components/subtitlesettings/subtitlesettingsopenbutton';
 import {VideoQualitySelectBox} from './components/videoqualityselectbox';
-import {Watermark} from './components/watermark';
 import {AudioQualitySelectBox} from './components/audioqualityselectbox';
 import {AudioTrackSelectBox} from './components/audiotrackselectbox';
 import {SeekBarLabel} from './components/seekbarlabel';
@@ -52,6 +51,7 @@ import {ArrayUtils} from './arrayutils';
 import {BrowserUtils} from './browserutils';
 import { PlayerUtils } from './playerutils';
 import { VolumeController } from './volumecontroller';
+import { SeekForwardButton, SeekButtonDirection } from './components/seekforwardbutton';
 
 export interface UIRecommendationConfig {
   title: string;
@@ -660,7 +660,6 @@ export namespace UIManager.Factory {
         controlBar,
         new TitleBar(),
         new RecommendationOverlay(),
-        new Watermark(),
         new ErrorMessageOverlay(),
       ],
       cssClasses: ['ui-skin-modern'],
@@ -738,9 +737,12 @@ export namespace UIManager.Factory {
       components: [
         new Container({
           components: [
+            new SeekForwardButton({ direction: SeekButtonDirection.Backward }),
+            new SeekForwardButton({ direction: SeekButtonDirection.Forward }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.CurrentTime, hideInLivePlayback: true }),
             new SeekBar({ label: new SeekBarLabel() }),
             new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.TotalTime, cssClasses: ['text-right'] }),
+            new PlaybackSpeedSelectBox(),
           ],
           cssClasses: ['controlbar-top'],
         }),
@@ -763,13 +765,12 @@ export namespace UIManager.Factory {
             new PictureInPictureToggleButton(),
             new AirPlayToggleButton(),
             new VolumeToggleButton(),
-            new SettingsToggleButton({ settingsPanel: settingsPanel }),
             new FullscreenToggleButton(),
           ],
         }),
         settingsPanel,
         subtitleSettingsPanel,
-        new Watermark(),
+
         new ErrorMessageOverlay(),
       ],
       cssClasses: ['ui-skin-modern', 'ui-skin-smallscreen'],
@@ -821,7 +822,6 @@ export namespace UIManager.Factory {
         new SubtitleOverlay(),
         new BufferingOverlay(),
         new PlaybackToggleOverlay(),
-        new Watermark(),
         controlBar,
         new TitleBar({ keepHiddenWithoutMetadata: true }),
         new ErrorMessageOverlay(),
@@ -899,7 +899,6 @@ export namespace UIManager.Factory {
         new SubtitleOverlay(),
         new CastStatusOverlay(),
         new PlaybackToggleOverlay(),
-        new Watermark(),
         new RecommendationOverlay(),
         controlBar,
         new TitleBar(),
@@ -939,7 +938,6 @@ export namespace UIManager.Factory {
       components: [
         new SubtitleOverlay(),
         new PlaybackToggleOverlay(),
-        new Watermark(),
         controlBar,
         new TitleBar(),
         new ErrorMessageOverlay(),
@@ -980,7 +978,6 @@ export namespace UIManager.Factory {
         new SubtitleOverlay(),
         new CastStatusOverlay(),
         new PlaybackToggleOverlay(),
-        new Watermark(),
         new RecommendationOverlay(),
         controlBar,
         new TitleBar(),
@@ -1383,4 +1380,3 @@ class PlayerWrapper {
     }
   }
 }
-

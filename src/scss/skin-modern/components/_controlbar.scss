@@ -9,7 +9,7 @@
 
   background: linear-gradient(to bottom, $color-transparent, $color-background-bars);
   line-height: 1em;
-  padding: 1em 1em .5em;
+  padding: 1em 0 .5em;
 
   .#{$prefix}-controlbar-top,
   .#{$prefix}-controlbar-bottom {
